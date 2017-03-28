@@ -4,18 +4,28 @@ app.controller('HomeController', ['$scope', '$location', 'SynthFactory', functio
 			$scope.user = data;
 		});
 	}
-	// function getPosts(){
-	// 	WallFactory.getPosts(function(data){
-	// 		$scope.posts = data;
-	// 	})
-	// }
-	// getPosts();
 	getUser();
-	// $scope.addPost = function(post){
-	// 	WallFactory.addPost(post, getPosts);
-	// 	$scope.newPost = {};
-	// }
-	// $scope.addComment = function(comment, post_id){
-	// 	WallFactory.addComment(comment, post_id, getPosts);
-	// }
+
+	function getYourPatches(){
+		SynthFactory.getYourPatches(function(data){
+			$scope.patches = data;
+		})
+	}
+	getYourPatches();
+
+	function getTheirPatches(){
+		SynthFactory.getTheirPatches(function(data){
+			$scope.patches = data;
+		})
+	}
+	getYourPatches();
+
+	$scope.addPatch = function(patch){
+		SynthFactory.addPatch(patch, getPatches);
+		$scope.newPatch = {};
+	}
+
+	$scope.deletePatch = function(id){
+		SynthFactory.deletePatch(id, getPatch);
+	}
 }])

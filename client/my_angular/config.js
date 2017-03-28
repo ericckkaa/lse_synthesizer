@@ -15,11 +15,15 @@ app.config(function($routeProvider, $httpProvider){
 });
 app.config(function($routeProvider){
 	$routeProvider
+		.when('/register', {
+			templateUrl: 'partials/registration.html',
+			controller: 'RegistrationController'
+		})
 		.when('/', {
 			templateUrl: 'partials/login.html',
 			controller: 'LoginController'
 		})
-		.when('/wall', {
+		.when('/home', {
 			templateUrl: 'partials/home.html',
 			controller: 'HomeController'
 		})
