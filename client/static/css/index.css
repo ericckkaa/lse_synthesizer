@@ -1,0 +1,10 @@
+*{
+}
+body{
+  width: 1366px;
+  height: 768px;
+  background-image: url("../img/synth_one.jpg");
+}
+h1{
+  font-style: normal;
+}

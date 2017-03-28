@@ -4,4 +4,16 @@
 	<label>Password: <input type="password" ng-model="loginUser.password"></label>
 	<button ng-click="login(loginUser)">Login</button>
 </form>
+
 Don't have an account? Please <a href="#!/register">register</a> here.
+
+<div id="wrapper">
+		<div class="loggin">
+				<h3>Log in!</h3>
+				<form action="login" method="GET">
+						Username:<input type="text" name="username" placeholder="Enter your Username">
+						Password:<input type="password" name"password" placeholder="Password">
+				</form>
+				<p>Don't have an account?<a href="#"> Register!</p>
+		</div>
+</div>
