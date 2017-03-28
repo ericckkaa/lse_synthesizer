@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var Patch = mongoose.model('Patch');
 
 var bcrypt = require('bcryptjs');
 
@@ -44,55 +45,49 @@ module.exports = {
 		User.find({}, function(err, data){
 			res.json(data);
 		})
-	}
-// 	getPosts: function(req, res){
-// 		Post.find({}).populate('user').populate({path: 'comments', populate: {path: 'user'}}).exec(function(err, data){
-// 			if(err){
-// 				res.status(400).send("Problem getting all the posts.")
-// 			}
-// 			else{
-// 				res.json(data);
-// 			}
-// 		})
-// 	},
-// 	createPost: function(req, res){
-// 		var post = new Post(req.body);
-// 		post.user = req.session.user._id;
-// 		post.save(function(err, data){
-// 			if(err){
-// 				res.status(400).send("Problem saving post");
-// 			}
-// 			else{
-// 				res.sendStatus(200);
-// 			}
-// 		})
-// 	},
-// 	createComment: function(req, res){
-// 		Post.findOne({_id: req.params.post_id}, function(err, post){
-// 			if(err){
-// 				res.status(400).send(err);
-// 			}
-// 			else{
-// 				var comment = new Comment(req.body);
-// 				comment.user = req.session.user._id;
-// 				comment._post = post._id;
-// 				comment.save(function(err, new_comment){
-// 					if(err){
-// 						res.status(400).send(err);
-// 					}
-// 					else{
-// 						post.comments.push(new_comment);
-// 						post.save(function(err, update_post){
-// 							if(err){
-// 								res.status(400).send(err);
-// 							}
-// 							else{
-// 								res.sendStatus(200);
-// 							}
-// 						})
-// 					}
-// 				})
-// 			}
-// 		})
-// 	}
+	},
+	delete: function(req,res){
+	    Patch.findOne({_id:req.params.id}, function(err,data){
+	          if(data == null){
+	              res.status(400).send("No patch found.")
+	          }
+	          else {
+	              data.remove();
+	              res.status(200).send("Patch was deleted.");
+	          }
+	    })
+	},
+	getYourPatches: function(req, res){
+		Patch.find({_id:req.params.id}).exec(function(err, data){
+			if(err){
+				res.status(400).send("Problem getting your patches.")
+			}
+			else{
+				res.json(data);
+			}
+		})
+	},
+	getTheirPatches: function(req, res){
+		Patch.find({}).populate('user').exec(function(err, data){
+			if(err){
+				res.status(400).send("Problem getting all the patches.")
+			}
+			else{
+				res.json(data);
+			}
+		})
+	},
+	createPatch: function(req, res){
+		var patch = new Patch(req.body);
+		patch.user = req.session.user._id;
+		patch.save(function(err, data){
+			if(err){
+				res.status(400).send("Problem saving patch");
+			}
+			else{
+				res.sendStatus(200);
+			}
+		})
+	},
+
 }

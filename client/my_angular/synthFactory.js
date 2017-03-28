@@ -33,41 +33,48 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 			console.log(res);
 		})
 	};
-	// factory.addPost = function(post, callback){
-	// 	console.log('printing data in the factory ', post)
-	// 	$http({
-	// 		url:'/post',
-	// 		method: 'POST',
-	// 		data: post
-	// 	}).then(function(res){
-	// 		// console.log(res);
-	// 		callback();
-	// 	}, function(res){
-	// 		console.log(res);
-	// 	})
-	// };
-	// factory.getPost = function(callback){
-	// 	$http({
-	// 		url: '/posts',
-	// 		method: 'GET'
-	// 	}).then(function(res){
-	// 		console.log(res);
-	// 		callback(res.data);
-	// 	}, function(res){
-	// 		console.log(res);
-	// 	})
-	// };
-	// factory.addComment = function(comment, post_id, callback){
-	// 	$http({
-	// 		url: '/comment/' + post_id,
-	// 		method: 'POST',
-	// 		data: comment
-	// 	}).then(function(res){
-	// 		callback();
-	// 		console.log(res);
-	// 	}, function(res){
-	// 		console.log(res);
-	// 	})
-	// }
+	factory.deletePatch = function(id, callback){
+		$http({
+			url: '/patches/' + id,
+			method: 'DELETE'
+		}).then(function(res){
+			callback();
+		})
+	};
+	factory.addPatch = function(post, callback){
+		console.log('printing data in the factory ', post)
+		$http({
+			url:'/patch',
+			method: 'POST',
+			data: post
+		}).then(function(res){
+			// console.log(res);
+			callback();
+		}, function(res){
+			console.log(res);
+		})
+	};
+	factory.getYourPatches = function(callback){
+		$http({
+			url: '/patches',
+			method: 'GET'
+		}).then(function(res){
+			console.log(res);
+			callback(res.data);
+		}, function(res){
+			console.log(res);
+		})
+	};
+	factory.getTheirPatches = function(callback){
+		$http({
+			url: '/all_patches',
+			method: 'GET'
+		}).then(function(res){
+			console.log(res);
+			callback(res.data);
+		}, function(res){
+			console.log(res);
+		})
+	};
 	return factory;
 }])
