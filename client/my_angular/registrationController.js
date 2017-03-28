@@ -2,3 +2,4 @@ app.controller('RegistrationController', ['$scope', '$location', 'SynthFactory',
 	$scope.register = function(user){
 		SynthFactory.register(user);
 	}
+}])
