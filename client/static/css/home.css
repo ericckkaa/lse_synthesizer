@@ -1,0 +1,47 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  background-image: url("space.jpg");
+}
+h2{
+  font-size: 30px;
+  color: hotpink;
+  font-style: normal;
+  font-family: "Tahoma", Geneva, sans-serif;
+  display: inline-block;
+}
+a{
+  font-size: 30px;
+  color: hotpink;
+  font-style: normal;
+  font-family: "Tahoma", Geneva, sans-serif;
+  text-decoration: none;
+  padding: 5px;
+  background-color: black;
+  border: 5px outset hotpink;
+  margin-left: 670px;
+}
+#wrapper{
+  width: 1024px;
+  height: 768px;
+}
+.synth{
+  width: 800px;
+  height: 600px;
+  background-color: rgba(234, 234, 234, 0.5);
+  display: inline-block;
+}
+.topfive{
+  width: 200px;
+  height: 400px;
+  background-color: rgba(234, 234, 234, 0.5);
+  display: inline-block;
+  vertical-align: top;
+}
+.explain{
+  width: 800px;
+  height: 100px;
+  background-color: rgba(234, 234, 234, 0.5);
+}

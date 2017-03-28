@@ -27,6 +27,10 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/home.html',
 			controller: 'HomeController'
 		})
+		.when('/wall', {
+			templateUrl: 'partials/registration.html',
+			controller: 'RegistrationController'
+		})
 		.otherwise({
 			redirectTo: '/'
 		})
