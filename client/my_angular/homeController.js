@@ -18,7 +18,7 @@ app.controller('HomeController', ['$scope', '$location', 'SynthFactory', functio
 			$scope.patches = data;
 		})
 	}
-	getYourPatches();
+	getTheirPatches();
 
 	$scope.addPatch = function(patch){
 		SynthFactory.addPatch(patch, getPatches);
