@@ -7,7 +7,7 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 			data: user
 		}).then(function(res){
 			// console.log(res);
-			$location.url('/wall')
+			$location.url('/home')
 		}, function(res){
 			console.log(res);
 		})
@@ -28,7 +28,7 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 			method: 'POST',
 			data: user
 		}).then(function(res){
-			$location.url('/wall')
+			$location.url('/home')
 		}, function(res){
 			console.log(res);
 		})
