@@ -1,19 +1,11 @@
-<h3>Login</h3>
-<form>
-	<label>Email: <input type="email" ng-model="loginUser.email"></label>
-	<label>Password: <input type="password" ng-model="loginUser.password"></label>
-	<button ng-click="login(loginUser)">Login</button>
-</form>
-
-Don't have an account? Please <a href="#!/register">register</a> here.
-
 <div id="wrapper">
-		<div class="loggin">
+		<div class="login">
 				<h3>Log in!</h3>
-				<form action="login" method="GET">
-						Username:<input type="text" name="username" placeholder="Enter your Username">
-						Password:<input type="password" name"password" placeholder="Password">
+				<form>
+						Email:<input type="email" name="email" placeholder="Enter your Email" ng-model="loginUser.email">
+						Password:<input type="password" name"password" placeholder="Password" ng-model="loginUser.password">
+						<button ng-click="login(loginUser)">Login</button>
 				</form>
-				<p>Don't have an account?<a href="#"> Register!</p>
+				<p>Don't have an account?<a href="#!/register"> Register!</p>
 		</div>
 </div>
