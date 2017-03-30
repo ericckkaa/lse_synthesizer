@@ -6,14 +6,11 @@
 @import url(http://fonts.googleapis.com/css?family=Monoton);
 *{
   /*border: 1px dotted red;*/
-  color: gray;
+  color: white;
   font-family: 'Candal', sans-serif;
 
 }
 #synthmodule{
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
   background: #363436;
   background-image: -webkit-linear-gradient(top, #363436, #000000);
   background-image: -moz-linear-gradient(top, #363436, #000000);
@@ -21,10 +18,11 @@
   background-image: -o-linear-gradient(top, #363436, #000000);
   background-image: linear-gradient(to bottom, #363436, #000000);
   display: inline-block;
-  height: 520px;
-  width: 800px;
+  height: auto;
+  width: 868px;
   border-right: solid #8f4914 20px;
   border-left: solid #8f4914 20px;
+  padding-bottom: 10px;
 }
 #meanie{
   display: inline-block;
@@ -43,6 +41,8 @@
   font-size: 32px;
 }
 #osctray{
+  margin-left: 25px;
+  text-align: center;
   display: inline-block;
   height: 150px;
   width: 200px;
@@ -50,38 +50,53 @@
   vertical-align: top;
 }
 #vcftray{
+  margin-left: 15px;
+  text-align: center;
   display: inline-block;
   border: red solid 1px;
   vertical-align: top;
-  height: 160px;
-  width: 240px;
+  height: auto;
+  width: auto;
   overflow: break-word;
 }
+#patchtray{
+  margin-left: 15px;
+  display: inline-block;
+}
 #adsrtray{
+  margin-left: 15px;
+  text-align: center;
   display: inline-block;
   width: auto;
   border: solid red 1px;
   vertical-align: top;
 }
 #lfotray{
+  margin-left: 15px;
+  text-align: center;
   display: inline-block;
   width: auto;
   border: solid red 1px;
   vertical-align: top;
 }
 #hpftray{
+  margin-left: 40px;
+  text-align: center;
   display: inline-block;
   border: solid red 1px;
   width: auto;
   vertical-align: top;
 }
 #vcatray{
+  margin-left: 25px;
+  text-align: center;
   display: inline-block;
   border: solid red 1px;
   width: auto;
   vertical-align: top;
 }
 #scopetray{
+  margin-left: 25px;
   display: inline-block;
   width:350px;
   height: 200px;
@@ -93,10 +108,13 @@
   background-image: linear-gradient(to bottom, #6bdb96, #456147);
 }
 #scopepatchtray{
+  margin-left: 25px;
   display: inline-block;
   vertical-align: top;
 }
 #chorustray{
+  margin-left: 50px;
+  text-align: center;
   display: inline-block;
   border: solid red 1px;
   vertical-align: top;
@@ -132,6 +150,7 @@
   display: inline-block;
   height: 30px;
   width: 100%;
+  margin-bottom: 2px;
 }
 #bluejunobar{
   background: #3a96c7;
@@ -143,6 +162,8 @@
   display: inline-block;
   height: 30px;
   width: 100%;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 .modsection{
   display: inline-block;
@@ -200,6 +221,7 @@ input.vertical {
   width: 40px;
   vertical-align: top;
   display: inline-block;
+
 }
 #fader{
   /*border: 1px solid red;*/
@@ -207,4 +229,67 @@ input.vertical {
 }
 #button{
   display: inline-block;
+}
+/* KEYBOARD CSS*/
+#keybox {
+  padding-top: 10px;
+  width:882px;
+  margin-left: -7px;
+  text-align: center}
+#blackkeys { position: absolute; z-index: 2; padding-left: 10px; margin-left: 41px; width:806px; height: 0px;}
+.key { display:inline-block; }
+.black {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #424142);
+  background-image: -moz-linear-gradient(top, #000000, #424142);
+  background-image: -ms-linear-gradient(top, #000000, #424142);
+  background-image: -o-linear-gradient(top, #000000, #424142);
+  background-image: linear-gradient(to bottom, #000000, #424142);
+  width: 40px;
+  height: 150px;
+  margin: 0px 11px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px; }
+.spacer { display:inline-block; width: 62px; height: 0; }
+.white {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #ffffff, #dbd8db);
+  background-image: -moz-linear-gradient(top, #ffffff, #dbd8db);
+  background-image: -ms-linear-gradient(top, #ffffff, #dbd8db);
+  background-image: -o-linear-gradient(top, #ffffff, #dbd8db);
+  background-image: linear-gradient(to bottom, #ffffff, #dbd8db);
+  width: 60px;
+  height: 250px;
+  border: 1px solid black;
+  border-bottom-right-radius:
+  5px; border-bottom-left-radius: 5px;
+}
+.pressed { background: gray }
+/*/ Synth Header/*/
+#wavehead{
+  padding-left: 110px;
+}
+#lfohead{
+  padding-left: 140px;
+}
+#patchhead{
+  padding-left: 96px;
+}
+#lpfhead{
+  padding-left: 96px;
+}
+#envhead{
+  padding-left: 120px;
+}
+#hpfhead{
+  padding-left: 46px;
+}
+#vcahead{
+  padding-left: 36px;
+}
+#oschead{
+  padding-left: 170px;
+}
+#chorushead{
+  padding-left: 260px;
 }
