@@ -6,8 +6,166 @@
         <h2>Hello {{user.name}}</h2>
         <a href="#!/logout">Logout</a>
     </div>
-    <div class="synth">
-
+    <div id="synthmodule">
+      <span id="meanie">M E A N S Y N T H</span>
+      <span id="lse">L S E</span>
+      <div id="redjunobar">
+        <span id="wavehead">DCO</span>
+        <span id="lfohead">LFO</span>
+        <span id="lpfhead">VCF</span>
+        <span id="envhead">ENV</span>
+      </div>
+      <div id="osctray">
+        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>∿</span></div>
+        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>△</span></div>
+        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>▢</span></div>
+        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>⊿</span></div>
+      </div>
+      <div id="lfotray">
+        <div id="fader">
+          <span class='modparam'>Rate</span><br><input type="range" min="0" max="1" value="0.5" step="0.001" class="vertical" orient="vertical" list="lfo">
+          <datalist id="lfo">
+            <option>0</option>
+            <option>0.2</option>
+            <option>0.4</option>
+            <option>0.6</option>
+            <option>0.8</option>
+            <option>1</option>
+          </datalist>
+        </div>
+        <div id="fader">
+          <span  class='modparam'>Delay</span><br><input type="range" min="1" max="4" value="2.5" step="0.01" class="vertical" orient="vertical" list="delay">
+          <datalist id="delay">
+            <option>1</option>
+            <option>1.6</option>
+            <option>2.2</option>
+            <option>2.8</option>
+            <option>3.4</option>
+            <option>4</option>
+          </datalist>
+        </div>
+      </div>
+      <div id="vcftray">
+        <div id="fader">
+          <span class='modparam'>Freq</span><br><input type="range" min="0" max="1" value="0.5" step="0.001" class="vertical" orient="vertical" list="cutoff">
+          <datalist id="cutoff">
+            <option>0</option>
+            <option>0.2</option>
+            <option>0.4</option>
+            <option>0.6</option>
+            <option>0.8</option>
+            <option>1</option>
+          </datalist>
+        </div>
+        <div id="fader">
+          <span  class='modparam'>Res</span><br><input type="range" min="1" max="4" value="2.5" step="0.01" class="vertical" orient="vertical" list="resonance">
+          <datalist id="resonance">
+            <option>1</option>
+            <option>1.6</option>
+            <option>2.2</option>
+            <option>2.8</option>
+            <option>3.4</option>
+            <option>4</option>
+          </datalist>
+        </div>
+      </div>
+      <div id="adsrtray">
+        <div id="fader">
+          <span class='modparam'>ATK</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="attack">
+          <datalist id="attack">
+            <option>0</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>100</option>
+          </datalist>
+        </div>
+        <div id="fader">
+          <span class='modparam'>DCY</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="decay">
+          <datalist id="decay">
+            <option>0</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>100</option>
+          </datalist>
+        </div>
+        <div id="fader">
+          <span class='modparam'>SUS</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="sustain">
+          <datalist id="sustain">
+            <option>0</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>100</option>
+          </datalist>
+        </div>
+        <div id="fader">
+          <span class='modparam'>RLS</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="release">
+          <datalist id="release">
+            <option>0</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>100</option>
+          </datalist>
+        </div>
+      </div>
+      <div id="bluejunobar">
+        <span id="hpfhead">HPF</span>
+        <span id="vcahead">VCA</span>
+        <span id="oschead">Oscilloscope</span>
+        <span id="chorushead">Chorus</span>
+      </div>
+      <div id="hpftray">
+        <div id="fader">
+          <span class="modparam">Freq</span><br>
+          <input type="range" min="0" max="100" value="50" step="20" class="vertical" orient="vertical" list="vca">
+          <datalist id="vca">
+            <option>0</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>100</option>
+          </datalist>
+        </div>
+      </div>
+      <div id="vcatray">
+          <div id="fader">
+            <span class="modparam">VCA</span><br>
+            <input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="vca">
+            <datalist id="vca">
+              <option>0</option>
+              <option>20</option>
+              <option>40</option>
+              <option>60</option>
+              <option>80</option>
+              <option>100</option>
+            </datalist>
+          </div>
+      </div>
+      <div id="scopepatchtray">
+        <div id="scopetray"></div>
+        <div id="patch menu">
+          <select>
+            <option value="Strings">Yes I'm Changing</option>
+            <option value="Brasslead">Bladerunner Theme</option>
+            <option value="Supersawlead">Tom Sawyer</option>
+            <option value="Bass">Deadmau5</option>
+          </select>
+        </div>
+      </div>
+      <div id="chorustray">
+          <span class="modsection">Chorus</span>
+          <div id="button"><a id='ledlight'></a><br><button class='junobutton3'></button><br><span class='modparam'>Off</span></div>
+          <div id="button"><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>I</span></div>
+          <div id="button"><a id='ledlight'></a><br><button class='junobutton2'></button><br><span class='modparam'>II</span></div>
+      </div>
     </div>
     <div class="topfive">
 
