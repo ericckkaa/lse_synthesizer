@@ -7,7 +7,6 @@ module.exports = function(app){
 	app.get('/all', serverController.all);
 	app.get('/logout', serverController.logout);
 	app.get('/user', serverController.loggedUser);
-	app.delete('/patches/:id', serverController.delete);
 	app.get('/patches', serverController.getYourPatches);
 	app.get('/all_patches', serverController.getTheirPatches);
 	app.post('/patch', serverController.createPatch);
