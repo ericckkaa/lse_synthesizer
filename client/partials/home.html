@@ -13,6 +13,7 @@
       <div id="redjunobar">
         <span id="wavehead">DCO</span>
         <span id="lfohead">LFO</span>
+        <span id="patchhead">Patch</span>
         <span id="lpfhead">VCF</span>
         <span id="envhead">ENV</span>
       </div>
@@ -44,6 +45,16 @@
             <option>3.4</option>
             <option>4</option>
           </datalist>
+        </div>
+      </div>
+      <div id="patchtray">
+        <div id="patchmenu">
+          <select>
+            <option value="Strings">Yes I'm Changing</option>
+            <option value="Brasslead">Bladerunner Theme</option>
+            <option value="Supersawlead">Tom Sawyer</option>
+            <option value="Bass">Deadmau5</option>
+          </select>
         </div>
       </div>
       <div id="vcftray">
@@ -138,7 +149,7 @@
       </div>
       <div id="vcatray">
           <div id="fader">
-            <span class="modparam">VCA</span><br>
+            <span class="modparam">Level</span><br>
             <input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="vca">
             <datalist id="vca">
               <option>0</option>
@@ -152,14 +163,6 @@
       </div>
       <div id="scopepatchtray">
         <div id="scopetray"></div>
-        <div id="patch menu">
-          <select>
-            <option value="Strings">Yes I'm Changing</option>
-            <option value="Brasslead">Bladerunner Theme</option>
-            <option value="Supersawlead">Tom Sawyer</option>
-            <option value="Bass">Deadmau5</option>
-          </select>
-        </div>
       </div>
       <div id="chorustray">
           <span class="modsection">Chorus</span>
@@ -167,9 +170,13 @@
           <div id="button"><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>I</span></div>
           <div id="button"><a id='ledlight'></a><br><button class='junobutton2'></button><br><span class='modparam'>II</span></div>
       </div>
+      <div id="keybox" touch-action="none">
+        <div id="blackkeys">
+          <span id="k61" class="black key"></span><span id="k63" class="black key"></span><span class="spacer"></span><span id="k66" class="black key"></span><span id="k68" class="black key"></span><span id="k70" class="black key"></span><span class="spacer"></span><span id="k73" class="black key"></span><span id="k75" class="black key"></span><span class="spacer"></span><span id="k78" class="black key"></span><span id="k80" class="black key"></span><span id="k82" class="black key"></span>
+        </div>
+          <span id="k60" class="white key"></span><span id="k62" class="white key"></span><span id="k64" class="white key"></span><span id="k65" class="white key"></span><span id="k67" class="white key"></span><span id="k69" class="white key"></span><span id="k71" class="white key"></span><span id="k72" class="white key"></span><span id="k74" class="white key"></span><span id="k76" class="white key"></span><span id="k77" class="white key"></span><span id="k79" class="white key"></span><span id="k81" class="white key"></span><span id="k83" class="white key"></span>
+      </div>
     </div>
-
-
     <div class="topfive">
 
     </div>
