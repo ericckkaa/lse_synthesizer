@@ -11,6 +11,9 @@
 
 }
 #synthmodule{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
   background: #363436;
   background-image: -webkit-linear-gradient(top, #363436, #000000);
   background-image: -moz-linear-gradient(top, #363436, #000000);

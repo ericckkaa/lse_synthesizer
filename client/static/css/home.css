@@ -3,7 +3,7 @@
   padding: 0px;
 }
 body{
-  background-image: url("space.jpg");
+  /*background-image: url("space.jpg");*/
 }
 h2{
   font-size: 30px;
@@ -12,7 +12,7 @@ h2{
   font-family: "Tahoma", Geneva, sans-serif;
   display: inline-block;
 }
-a{
+#links{
   font-size: 30px;
   color: hotpink;
   font-style: normal;
@@ -27,21 +27,15 @@ a{
   width: 1024px;
   height: 768px;
 }
-.synth{
-  width: 800px;
-  height: 600px;
-  background-color: rgba(234, 234, 234, 0.5);
-  display: inline-block;
-}
-.topfive{
+/*.topfive{
   width: 200px;
   height: 400px;
   background-color: rgba(234, 234, 234, 0.5);
   display: inline-block;
   vertical-align: top;
-}
-.explain{
+}*/
+/*.explain{
   width: 800px;
   height: 100px;
   background-color: rgba(234, 234, 234, 0.5);
-}
+}*/
