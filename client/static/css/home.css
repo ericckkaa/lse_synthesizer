@@ -7,19 +7,17 @@ body{
 }
 h2{
   font-size: 30px;
-  font-style: normal;
-  font-family: "Tahoma", Geneva, sans-serif;
-  display: inline-block;
+  font-family: "Verdana", Geneva, sans-serif;
 }
 #links{
-  font-size: 30px;
-  font-style: normal;
-  font-family: "Tahoma", Geneva, sans-serif;
+  font-size: 15px;
+  font-family: "Verdana", Geneva, sans-serif;
   text-decoration: none;
-  padding: 5px;
-  background-color: black;
+  padding: 2px;
+  background-color: rgba(234, 234, 234, 0.5)
   border: 5px outset;
-  margin-left: 670px;
+  margin-left: 450px;
+  color: #3995c6;
 }
 #wrapper{
   width: 1024px;
