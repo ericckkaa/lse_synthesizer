@@ -33,14 +33,14 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 			console.log(res);
 		})
 	};
-	factory.deletePatch = function(id, callback){
-		$http({
-			url: '/patches/' + id,
-			method: 'DELETE'
-		}).then(function(res){
-			callback();
-		})
-	};
+	// factory.deletePatch = function(id, callback){
+	// 	$http({
+	// 		url: '/patches/' + id,
+	// 		method: 'DELETE'
+	// 	}).then(function(res){
+	// 		callback();
+	// 	})
+	// };
 	factory.addPatch = function(post, callback){
 		console.log('printing data in the factory ', post)
 		$http({

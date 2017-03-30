@@ -7,20 +7,18 @@ body{
 }
 h2{
   font-size: 30px;
-  color: hotpink;
   font-style: normal;
   font-family: "Tahoma", Geneva, sans-serif;
   display: inline-block;
 }
 #links{
   font-size: 30px;
-  color: hotpink;
   font-style: normal;
   font-family: "Tahoma", Geneva, sans-serif;
   text-decoration: none;
   padding: 5px;
   background-color: black;
-  border: 5px outset hotpink;
+  border: 5px outset;
   margin-left: 670px;
 }
 #wrapper{
