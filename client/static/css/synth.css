@@ -7,8 +7,7 @@
 *{
   /*border: 1px dotted red;*/
   color: #dfd6e1;
-  font-family: 'Candal', sans-serif;
-
+  font-family: "Verdana", Geneva, sans-serif;
 }
 #synthmodule{
   background: #363436;
@@ -190,6 +189,12 @@
   width: 40px;
   height: 20px;
 }
+.junobutton1:hover{
+  background: #3995c6;
+}
+.junobutton1:active{
+  background: #bc3333;
+}
 .junobutton2{
   background: #ffaa17;
   background-image: -webkit-linear-gradient(top, #ffaa17, #f0820c);
@@ -201,6 +206,9 @@
   border-radius: 4px;
   width: 40px;
   height: 20px;
+}
+.junobutton2:hover{
+  background: #3995c6;
 }
 .junobutton3{
   background: #fff1d9;
@@ -214,6 +222,9 @@
   width: 40px;
   height: 20px;
 }
+.junobutton3:hover{
+  background: #3995c6;
+}
 input.vertical {
 	-webkit-appearance: slider-vertical;
 	writing-mode: bt-lr;
@@ -221,6 +232,9 @@ input.vertical {
   width: 40px;
   vertical-align: top;
   display: inline-block;
+}
+input.vertical:hover {
+color: red;
 }
 #fader{
   /*border: 1px solid red;*/
@@ -262,6 +276,22 @@ input.vertical {
   border: 1px solid black;
   border-bottom-right-radius:
   5px; border-bottom-left-radius: 5px;
+}
+.black:hover {
+  background: #3a96c7;
+  background-image: -webkit-linear-gradient(top, #3a96c7, #042f85);
+  background-image: -moz-linear-gradient(top, #3a96c7, #042f85);
+  background-image: -ms-linear-gradient(top, #3a96c7, #042f85);
+  background-image: -o-linear-gradient(top, #3a96c7, #042f85);
+  background-image: linear-gradient(to bottom, #3a96c7, #042f85);
+}
+.white:hover {
+  background: #ff8400;
+  background-image: -webkit-linear-gradient(top, #ff8400, #e30909);
+  background-image: -moz-linear-gradient(top, #ff8400, #e30909);
+  background-image: -ms-linear-gradient(top, #ff8400, #e30909);
+  background-image: -o-linear-gradient(top, #ff8400, #e30909);
+  background-image: linear-gradient(to bottom, #ff8400, #e30909);
 }
 .pressed { background: gray }
 /*/ Synth Header/*/
