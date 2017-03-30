@@ -46,17 +46,17 @@ module.exports = {
 			res.json(data);
 		})
 	},
-	delete: function(req,res){
-	    Patch.findOne({_id:req.params.id}, function(err,data){
-	          if(data == null){
-	              res.status(400).send("No patch found.")
-	          }
-	          else {
-	              data.remove();
-	              res.status(200).send("Patch was deleted.");
-	          }
-	    })
-	},
+	// delete: function(req,res){
+	//     Patch.findOne({_id:req.params.id}, function(err,data){
+	//           if(data == null){
+	//               res.status(400).send("No patch found.")
+	//           }
+	//           else {
+	//               data.remove();
+	//               res.status(200).send("Patch was deleted.");
+	//           }
+	//     })
+	// },
 	getYourPatches: function(req, res){
 		Patch.find({_id:req.params.id}).exec(function(err, data){
 			if(err){

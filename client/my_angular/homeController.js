@@ -25,7 +25,7 @@ app.controller('HomeController', ['$scope', '$location', 'SynthFactory', functio
 		$scope.newPatch = {};
 	}
 
-	$scope.deletePatch = function(id){
-		SynthFactory.deletePatch(id, getPatch);
-	}
+	// $scope.deletePatch = function(id){
+	// 	SynthFactory.deletePatch(id, getPatch);
+	// }
 }])
