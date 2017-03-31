@@ -76,5 +76,15 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 			console.log(res);
 		})
 	};
+	factory.currentSetting = function(id,callback){
+	//   console.log(patch);
+	  $http({
+		url: '/patches/' + id,
+		method: 'GET',
+	  }).then(function(res){
+		// console.log(res);
+		callback(res.data)
+	})
+	};
 	return factory;
 }])

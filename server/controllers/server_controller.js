@@ -89,5 +89,12 @@ module.exports = {
 			}
 		})
 	},
-
+	currentSetting: function(req,res){
+	  Patch.findOne({_id: req.params.id}, req.body, function(err, data){
+		if(err){
+		  console.log(err);
+		  res.status(400).send("Problem updating patch");
+		}else res.json(data);
+	  })
+	},
 }
