@@ -11,6 +11,8 @@ module.exports = function(app){
 	app.get('/patches', serverController.getYourPatches);
 	app.get('/all_patches', serverController.getTheirPatches);
 	app.post('/patch', serverController.createPatch);
+	app.get('/patches/:id', serverController.currentSetting);
+	// app.get('/patches/:id', serverController.currentSetting);
 }
 function authenticateUser(req, res, next){
 	if(req.session.user){
