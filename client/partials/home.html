@@ -1,4 +1,3 @@
-<script src="flocking/flocking-all.js"></script>
 <link rel="stylesheet" href="static/css/home.css">
 <h3>The LSE Synth</h3>
 <div id="wrapper">
@@ -22,6 +21,14 @@
         <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>△</span></div>
         <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>▢</span></div>
         <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>⊿</span></div>
+        <span>Current waveform: </span>
+<select name="waveform">
+  <option value="sine">Sine</option>
+  <option value="square" selected>Square</option>
+  <option value="sawtooth">Sawtooth</option>
+  <option value="triangle">Triangle</option>
+  <option value="custom">Custom</option>
+</select>
       </div>
       <div id="lfotray">
         <div id="fader">
@@ -161,7 +168,7 @@
           </div>
       </div>
       <div id="scopepatchtray">
-        <div id="scopetray"></div>
+        <div id="scopetray" class="oscilloscope__wave"></div>
       </div>
       <div id="chorustray">
           <span class="modsection">Chorus</span>
@@ -171,10 +178,12 @@
       </div>
     </form>
       <div id="keybox" touch-action="none">
-        <div id="blackkeys">
-          <span id="k61" class="black key"></span><span id="k63" class="black key"></span><span class="spacer"></span><span id="k66" class="black key"></span><span id="k68" class="black key"></span><span id="k70" class="black key"></span><span class="spacer"></span><span id="k73" class="black key"></span><span id="k75" class="black key"></span><span class="spacer"></span><span id="k78" class="black key"></span><span id="k80" class="black key"></span><span id="k82" class="black key"></span>
+        <div class="container">
+          <div id="blackkeys">
+            <div class="blackkeys"></div>
+          </div>
+          <div class="whitekeys"></div>
         </div>
-          <span id="k60" class="white key"></span><span id="k62" class="white key"></span><span id="k64" class="white key"></span><span id="k65" class="white key"></span><span id="k67" class="white key"></span><span id="k69" class="white key"></span><span id="k71" class="white key"></span><span id="k72" class="white key"></span><span id="k74" class="white key"></span><span id="k76" class="white key"></span><span id="k77" class="white key"></span><span id="k79" class="white key"></span><span id="k81" class="white key"></span><span id="k83" class="white key"></span>
       </div>
     </div>
     <div class="topfive">
@@ -184,3 +193,4 @@
 
     </div>
 </div>
+<script type="text/javascript" src="static/synth.js"></script>
