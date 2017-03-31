@@ -41,15 +41,15 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 	// 		callback();
 	// 	})
 	// };
-	factory.addPatch = function(post, callback){
-		console.log('printing data in the factory ', post)
+	factory.createPatch = function(patch, callback){
+		console.log('printing data in the factory ', patch)
 		$http({
 			url:'/patch',
 			method: 'POST',
-			data: post
+			data: patch
 		}).then(function(res){
-			// console.log(res);
 			callback();
+			window.location.reload();
 		}, function(res){
 			console.log(res);
 		})
@@ -59,7 +59,7 @@ app.factory('SynthFactory', ['$location', '$http', function($location, $http){
 			url: '/patches',
 			method: 'GET'
 		}).then(function(res){
-			console.log(res);
+			// console.log(res);
 			callback(res.data);
 		}, function(res){
 			console.log(res);

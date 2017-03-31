@@ -1,7 +1,6 @@
 <script src="flocking/flocking-all.js"></script>
 <link rel="stylesheet" href="static/css/home.css">
 <h3>The LSE Synth</h3>
-<h4>This is where we will save your patches</h4>
 <div id="wrapper">
     <div class="user">
         <h2>Hello {{user.name}}<a id="links" href="#!/logout">Logout</a></h2>
@@ -17,15 +16,16 @@
         <span id="lpfhead">VCF</span>
         <span id="envhead">ENV</span>
       </div>
+      <form>
       <div id="osctray">
-        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>∿</span></div>
-        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>△</span></div>
-        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>▢</span></div>
-        <div id="button"><br><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>⊿</span></div>
+        <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>∿</span></div>
+        <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>△</span></div>
+        <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>▢</span></div>
+        <div id="button"><br><a id='ledlight'input type="radio"></a><br><button class='junobutton1'></button><br><span class='modparam'>⊿</span></div>
       </div>
       <div id="lfotray">
         <div id="fader">
-          <span class='modparam'>Rate</span><br><input type="range" min="0" max="1" value="0.5" step="0.001" class="vertical" orient="vertical" list="lfo">
+          <span class='modparam'>Rate</span><br><input type="range" min="0" max="1" value="0.5" step="0.001" class="vertical" orient="vertical" list="lfo" ng-model="newPatch.slforate">
           <datalist id="lfo">
             <option>0</option>
             <option>0.2</option>
@@ -36,7 +36,7 @@
           </datalist>
         </div>
         <div id="fader">
-          <span  class='modparam'>Delay</span><br><input type="range" min="1" max="4" value="2.5" step="0.01" class="vertical" orient="vertical" list="delay">
+          <span  class='modparam'>Delay</span><br><input type="range" min="1" max="4" value="2.5" step="0.01" class="vertical" orient="vertical" list="delay" ng-model ="newPatch.slfodelay">
           <datalist id="delay">
             <option>1</option>
             <option>1.6</option>
@@ -50,17 +50,14 @@
       <div id="patchtray">
         <div id="patchmenu">
           <select>
-            <option value="Strings">Yes I'm Changing</option>
-            <option value="Brasslead">Bladerunner Theme</option>
-            <option value="Supersawlead">Tom Sawyer</option>
-            <option value="Bass">Deadmau5</option>
+            <option ng-repeat = "patch in patches">{{patch.patch_name}}</option>
           </select>
-          <br><button type="button" ng-click="addPatch(newPatch)">Save</button>
+          <br> <input type="text" value="Patch Name" ng-model="newPatch.patch_name"><br><button type="button" ng-click="createPatch(newPatch)">Save</button>
         </div>
       </div>
       <div id="vcftray">
         <div id="fader">
-          <span class='modparam'>Freq</span><br><input type="range" min="0" max="1" value="0.5" step="0.001" class="vertical" orient="vertical" list="cutoff">
+          <span class='modparam'>Freq</span><br><input type="range" min="0" max="1" value="0.5" step="0.001" class="vertical" orient="vertical" list="cutoff" ng-model="newPatch.svcffreq">
           <datalist id="cutoff">
             <option>0</option>
             <option>0.2</option>
@@ -71,7 +68,7 @@
           </datalist>
         </div>
         <div id="fader">
-          <span class='modparam'>Res</span><br><input type="range" min="1" max="4" value="2.5" step="0.01" class="vertical" orient="vertical" list="resonance">
+          <span class='modparam'>Res</span><br><input type="range" min="1" max="4" value="2.5" step="0.01" class="vertical" orient="vertical" list="resonance" ng-model="newPatch.svcfres">
           <datalist id="resonance">
             <option>1</option>
             <option>1.6</option>
@@ -84,7 +81,7 @@
       </div>
       <div id="adsrtray">
         <div id="fader">
-          <span class='modparam'>ATK</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="attack">
+          <span class='modparam'>ATK</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="attack" ng-model="newPatch.senvatk">
           <datalist id="attack">
             <option>0</option>
             <option>20</option>
@@ -95,7 +92,7 @@
           </datalist>
         </div>
         <div id="fader">
-          <span class='modparam'>DCY</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="decay">
+          <span class='modparam'>DCY</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="decay" ng-model="newPatch.senvdcy">
           <datalist id="decay">
             <option>0</option>
             <option>20</option>
@@ -106,7 +103,7 @@
           </datalist>
         </div>
         <div id="fader">
-          <span class='modparam'>SUS</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="sustain">
+          <span class='modparam'>SUS</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="sustain" ng-model="newPatch.senvsus">
           <datalist id="sustain">
             <option>0</option>
             <option>20</option>
@@ -117,7 +114,7 @@
           </datalist>
         </div>
         <div id="fader">
-          <span class='modparam'>RLS</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="release">
+          <span class='modparam'>RLS</span><br><input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="release" ng-model="newPatch.senvrls">
           <datalist id="release">
             <option>0</option>
             <option>20</option>
@@ -137,7 +134,7 @@
       <div id="hpftray">
         <div id="fader">
           <span class="modparam">Freq</span><br>
-          <input type="range" min="0" max="100" value="50" step="20" class="vertical" orient="vertical" list="vca">
+          <input type="range" min="0" max="100" value="50" step="20" class="vertical" orient="vertical" list="vca" ng-model="newPatch.shpffreq">
           <datalist id="vca">
             <option>0</option>
             <option>20</option>
@@ -151,7 +148,7 @@
       <div id="vcatray">
           <div id="fader">
             <span class="modparam">Level</span><br>
-            <input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="vca">
+            <input type="range" min="0" max="100" value="50" step="0.01" class="vertical" orient="vertical" list="vca" ng-model="newPatch.svcalevel">
             <datalist id="vca">
               <option>0</option>
               <option>20</option>
@@ -171,6 +168,7 @@
           <div id="button"><a id='ledlight'></a><br><button class='junobutton1'></button><br><span class='modparam'>I</span></div>
           <div id="button"><a id='ledlight'></a><br><button class='junobutton2'></button><br><span class='modparam'>II</span></div>
       </div>
+    </form>
       <div id="keybox" touch-action="none">
         <div id="blackkeys">
           <span id="k61" class="black key"></span><span id="k63" class="black key"></span><span class="spacer"></span><span id="k66" class="black key"></span><span id="k68" class="black key"></span><span id="k70" class="black key"></span><span class="spacer"></span><span id="k73" class="black key"></span><span id="k75" class="black key"></span><span class="spacer"></span><span id="k78" class="black key"></span><span id="k80" class="black key"></span><span id="k82" class="black key"></span>
