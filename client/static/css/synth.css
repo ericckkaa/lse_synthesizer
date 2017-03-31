@@ -189,12 +189,6 @@
   width: 40px;
   height: 20px;
 }
-.junobutton1:hover{
-  background: #3995c6;
-}
-.junobutton1:active{
-  background: #bc3333;
-}
 .junobutton2{
   background: #ffaa17;
   background-image: -webkit-linear-gradient(top, #ffaa17, #f0820c);
@@ -207,9 +201,6 @@
   width: 40px;
   height: 20px;
 }
-.junobutton2:hover{
-  background: #3995c6;
-}
 .junobutton3{
   background: #fff1d9;
   background-image: -webkit-linear-gradient(top, #fff1d9, #f0cda8);
@@ -221,9 +212,6 @@
   border-radius: 4px;
   width: 40px;
   height: 20px;
-}
-.junobutton3:hover{
-  background: #3995c6;
 }
 input.vertical {
 	-webkit-appearance: slider-vertical;

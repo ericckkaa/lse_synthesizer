@@ -17,7 +17,11 @@ h2{
   background-color: rgba(234, 234, 234, 0.5)
   border: 5px outset;
   margin-left: 450px;
-  color: #3995c6;
+  color: white;
+}
+#links:hover{
+  background-color: black;
+  border: 2px outset white;
 }
 #wrapper{
   width: 1024px;
