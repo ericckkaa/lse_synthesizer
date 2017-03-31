@@ -13,11 +13,16 @@ var PatchSchema = new mongoose.Schema({
     user:{type: Schema.Types.ObjectId, ref: 'User'},
     patch_name:{type: String, required:true},
     waveform:{type: String},
-    hpf:{type: Number},
-    lpf:{type: Number},
-    attack:{type: Number},
-    decay:{type: Number},
-    sustain:{type: Number},
-    release:{type: Number}
+	slforate:{type: Number},
+	slfodelay:{type: Number},
+    svcffreq:{type: Number},
+    svcfres:{type: Number},
+    senvatk:{type: Number},
+    senvdcy:{type: Number},
+    senvsus:{type: Number},
+    senvrls:{type: Number},
+	shpffreq:{type: Number},
+	svcalevel:{type: Number},
+	chorus: {type: String}
 }, {timestamps: true});
 mongoose.model('Patch', PatchSchema)
